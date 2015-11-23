@@ -1,0 +1,15 @@
+<ion-view view-title="NexTrain">
+  <ion-content class="padding">
+    <div class="list card" ng-repeat="connection in connections">
+      <div class="item item-divider">{{connection.departure.date | date:'HH:mm' }} ({{ connection.departure.date | timeFromNow }})</div>
+      <div class="item item-body">
+        <div>
+          <div><b>Type</b> <i class="{{ connection.departure.vehicle | vehicleType }}"></i></div>
+          <div><b>Platform</b> {{ connection.departure.platform }}</div>
+          <div><b>Direction</b> {{ connection.departure.direction.name }}</div>
+          <div><b>Vehicle</b> {{ connection.departure.vehicle }}</div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
